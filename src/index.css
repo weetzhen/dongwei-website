@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Product Gallery Animations ===== */
+
+/* 主图：淡入 + 缩放弹出 */
+@keyframes imgFadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 配件大图：从右滑入 */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 配件大图：从左滑入 */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 配件大图：从下滑入 */
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 配件大图：从上滑入 */
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 选中缩略图脉冲光晕 */
+@keyframes thumbPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(246, 68, 78, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(246, 68, 78, 0);
+  }
+}
+
+/* 箭头按钮弹跳 */
+@keyframes arrowBounceH {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+@keyframes arrowBounceHLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-3px); }
+}
+@keyframes arrowBounceV {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+@keyframes arrowBounceVUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* 工具类 */
+.animate-img-fade-zoom {
+  animation: imgFadeZoomIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-slide-right {
+  animation: slideInFromRight 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-slide-left {
+  animation: slideInFromLeft 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-slide-bottom {
+  animation: slideInFromBottom 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-slide-top {
+  animation: slideInFromTop 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-thumb-pulse {
+  animation: thumbPulse 1.6s ease-in-out infinite;
+}
+.hover-arrow-right:hover i {
+  animation: arrowBounceH 0.5s ease-in-out infinite;
+}
+.hover-arrow-left:hover i {
+  animation: arrowBounceHLeft 0.5s ease-in-out infinite;
+}
+.hover-arrow-down:hover i {
+  animation: arrowBounceV 0.5s ease-in-out infinite;
+}
+.hover-arrow-up:hover i {
+  animation: arrowBounceVUp 0.5s ease-in-out infinite;
+}
