@@ -167,7 +167,7 @@ export default function AllProductsPage() {
           alt="All Products"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-transparent"></div>
       </div>
 
       {/* Sticky Series Tabs */}

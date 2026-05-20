@@ -33,6 +33,7 @@ export const gardenToolsDetailData: Record<string, { mainImages: string[]; featu
   'ht-002': {featureCount: 4,     //M0L-DW03-6C
     mainImages: [
       '/img/CP/ylin/lg/M0L-DW03-6C/1300-M0L-DW03-6C-03.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1779251386/M0L-DW03-6C_qvxqoj.mp4#t=10.8',
       '/img/CP/ylin/lg/M0L-DW03-6C/1300-M0L-DW03-6C-02.jpg',
       '/img/CP/ylin/lg/M0L-DW03-6C/1300-M0L-DW03-6C-04.jpg',
       '/img/CP/ylin/lg/M0L-DW03-6C/1300-M0L-DW03-6C-05.jpg',
@@ -214,6 +215,7 @@ export const gardenToolsDetailData: Record<string, { mainImages: string[]; featu
   'pp-001': {     //N0HX-DW01B-410
     mainImages: [
       '/img/CP/ylin/gzj/N0HX-DW01B-410/1300-N0HX-DW01B-410-06.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1779246118/N0HX-DW01B-410_x5vsgi.mp4#t=8.5',
       '/img/CP/ylin/gzj/N0HX-DW01B-410/1300-N0HX-DW01B-410-01.jpg',
       '/img/CP/ylin/gzj/N0HX-DW01B-410/1300-N0HX-DW01B-410-03.jpg',
       '/img/CP/ylin/gzj/N0HX-DW01B-410/1300-N0HX-DW01B-410-02.jpg',
@@ -249,6 +251,7 @@ export const gardenToolsDetailData: Record<string, { mainImages: string[]; featu
   'pp-003': {     //M0HL-DW08-8C
     mainImages: [
       '/img/CP/ylin/gzj/M0HL-DW08-8C/1300-M0HL-DW08-8C-03.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1779252634/M0HL-DW08-8C_gjjkj6.mp4#t=10',
       '/img/CP/ylin/gzj/M0HL-DW08-8C/1300-M0HL-DW08-8C-01.jpg',
       '/img/CP/ylin/gzj/M0HL-DW08-8C/1300-M0HL-DW08-8C-02.jpg',
       '/img/CP/ylin/gzj/M0HL-DW08-8C/1300-M0HL-DW08-8C-04.jpg',

@@ -35,7 +35,7 @@ export default function SharpeningPage() {
         <img
           src="/img/flpage/dmo.jpg"
           alt={t('products.sharpening.hero.title')}
-          className="w-full h-full object-cover object-[center_70%]"
+          className="w-full h-full object-cover object-[center_45%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/0"></div>
       </div>

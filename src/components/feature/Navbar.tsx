@@ -17,6 +17,7 @@ interface MenuItem {
   type: 'megaMenu' | 'scroll' | 'modal';
   megaMenu?: MegaMenuData;
   scrollTo?: string;
+  homeOnly?: boolean;
 }
 
 interface Language {
@@ -268,18 +269,21 @@ export default function Navbar() {
         ],
       },
     },
-    { title: t('nav_production_scale'), type: 'scroll', scrollTo: 'production-scale' },
-    { title: t('nav_brand_strength'), type: 'scroll', scrollTo: 'brand-strength' },
+    { title: t('nav_production_scale'), type: 'scroll', scrollTo: 'production-scale', homeOnly: true },
+    { title: t('nav_brand_strength'), type: 'scroll', scrollTo: 'brand-strength', homeOnly: true },
     { title: t('nav_contact'), type: 'modal' },
   ];
 
   const categoryImages: Record<string, string> = {
     [t('cat_nail_guns')]: '/img/homefl/dqiang.jpg',
     [t('cat_garden_tools')]: '/img/homefl/ylin.jpg',
-    [t('cat_brushless')]: '/img/homefl/qzuan.jpg',
-    [t('cat_workshop')]: '/img/homefl/mxue.jpg',
-    [t('cat_sharpening')]: '/img/homefl/msha.jpg',
+    [t('cat_brushless')]: '/img/homefl/wshua.jpg',
+    [t('cat_workshop')]: '/img/homefl/gfang.jpg',
+    [t('cat_sharpening')]: '/img/homefl/mxue.jpg',
   };
+
+  const isHomePage = location.pathname === '/';
+  const visibleMenuItems = menuItems.filter(item => !item.homeOnly || isHomePage);
 
   const megaMenuData = menuItems.find(m => m.type === 'megaMenu')?.megaMenu;
 
@@ -313,7 +317,7 @@ export default function Navbar() {
 
             {/* 桌面端主菜单 */}
             <div className="hidden md:flex items-center gap-2 flex-1">
-              {menuItems.map((item) => (
+              {visibleMenuItems.map((item) => (
                 <div
                   key={item.title}
                   ref={(el) => {
@@ -691,7 +695,7 @@ export default function Navbar() {
               </div>
 
               {/* 其他菜单项 */}
-              {menuItems.filter(item => item.type !== 'megaMenu').map((item) => (
+              {visibleMenuItems.filter(item => item.type !== 'megaMenu').map((item) => (
                 <button
                   key={item.title}
                   onClick={() => {

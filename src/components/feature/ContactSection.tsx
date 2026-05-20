@@ -71,12 +71,6 @@ export default function ContactSection() {
                     valueKey: 'contact_email',
                     color: '#f6444e',
                   },
-                  {
-                    icon: 'ri-phone-fill',
-                    labelKey: 'contact_landline_label',
-                    valueKey: 'contact_landline',
-                    color: '#144c90',
-                  },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 md:gap-4 bg-gray-50 rounded-xl px-4 md:px-5 py-3 md:py-4 shadow-sm hover:shadow-md transition-all duration-200">
                     <div className="w-10 h-10 md:w-11 md:h-12 flex items-center justify-center rounded-full flex-shrink-0" style={{ backgroundColor: item.color }}>
@@ -94,14 +88,14 @@ export default function ContactSection() {
             {/* Right Form Panel */}
             <div className="rounded-2xl shadow-xl overflow-hidden">
               <div className="h-2 w-full" style={{ background: 'linear-gradient(90deg, #f6444e, #144c90)' }}></div>
-              <div className="bg-white px-5 md:px-10 py-6 md:py-10">
+              <div className="bg-white px-5 md:px-10 py-5 md:py-8">
                 <h3 className="text-xl md:text-2xl font-black mb-2 text-gray-900">{t('form_title')}</h3>
                 <p className="text-gray-400 text-sm mb-6 md:mb-8">{t('form_subtitle')}</p>
                 <form
                   id="contact-form"
                   data-readdy-form
                   onSubmit={handleContactSubmit}
-                  className="space-y-4 md:space-y-5"
+                  className="space-y-3 md:space-y-4"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                     <div>
@@ -171,7 +165,7 @@ export default function ContactSection() {
                     <textarea
                       name="message"
                       required
-                      rows={8}
+                      rows={5}
                       maxLength={500}
                       value={contactForm.message}
                       onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}

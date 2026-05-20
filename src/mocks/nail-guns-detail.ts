@@ -36,7 +36,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/4V/J-120/1300-J-120-01.jpg',
-      'https://res.cloudinary.com/dog2morgs/video/upload/v1778476921/J-120_hmmdkl.mp4',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778476921/J-120_hmmdkl.mp4#t=1.8',
       '/img/CP/dqiang/4V/J-120/1300-J-120-02.jpg',
       '/img/CP/dqiang/4V/J-120/1300-J-120-03.jpg',
       '/img/CP/dqiang/4V/J-120/1300-J-120-04.jpg',
@@ -76,6 +76,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/4V/J-139/1300-J139-01.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778561929/J-139_tdoyen.mp4#t=4',
       '/img/CP/dqiang/4V/J-139/1300-J139-02.jpg',
       '/img/CP/dqiang/4V/J-139/1300-J139-03.jpg',
       '/img/CP/dqiang/4V/J-139/1300-J139-04.jpg',
@@ -114,7 +115,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/4V/J-153/1300-J153-01.jpg',
-      'https://res.cloudinary.com/dog2morgs/video/upload/v1778476919/J-153_fdagk4.mp4',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778476919/J-153_fdagk4.mp4#t=1.5',
       '/img/CP/dqiang/4V/J-153/1300-J153-02.jpg',
       '/img/CP/dqiang/4V/J-153/1300-J153-03.jpg',
       '/img/CP/dqiang/4V/J-153/1300-J153-04.jpg',
@@ -233,6 +234,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/20V/J-133/1300-J133-02.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778661405/J-133_yf8ctz.mp4#t=0.3',
       '/img/CP/dqiang/20V/J-133/1300-J133-01.jpg',
       '/img/CP/dqiang/20V/J-133/1300-J133-03.jpg',
       '/img/CP/dqiang/20V/J-133/1300-J133-04.jpg',
@@ -253,6 +255,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/20V/J-145/1300-J145-02.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778830114/J-145_hwkdj7.mp4#t=2.8',
       '/img/CP/dqiang/20V/J-145/1300-J145-01.jpg',
       '/img/CP/dqiang/20V/J-145/1300-J145-03.jpg',
       '/img/CP/dqiang/20V/J-145/1300-J145-04.jpg',
@@ -282,7 +285,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/20V/J-150/1300-J150-01.jpg',
-      'https://res.cloudinary.com/dog2morgs/video/upload/v1778214373/J-150_tcsvpg.mp4#t=84',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778214373/J-150_tcsvpg.mp4#t=85',
       '/img/CP/dqiang/20V/J-150/1300-J150-02.jpg',
       '/img/CP/dqiang/20V/J-150/1300-J150-03.jpg',
       '/img/CP/dqiang/20V/J-150/1300-J150-04.jpg',
@@ -297,6 +300,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/20V/J-156/1300-J156-05.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778661405/J-156_nnwz7m.mp4#t=0.5',
       '/img/CP/dqiang/20V/J-156/1300-J156-01.jpg',
       '/img/CP/dqiang/20V/J-156/1300-J156-02.jpg',
       '/img/CP/dqiang/20V/J-156/1300-J156-03.jpg',
@@ -347,6 +351,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/AC/J-112/1300-J112-01.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778834413/J-112_hi5f14.mp4#t=1.8',
       '/img/CP/dqiang/AC/J-112/1300-J112-02.jpg',
       '/img/CP/dqiang/AC/J-112/1300-J112-03.jpg',
       '/img/CP/dqiang/AC/J-112/1300-J112-04.jpg',
@@ -396,6 +401,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
       ],
       mainImages: [
         '/img/CP/dqiang/AC/J-119/1300-J-119-06.jpg',
+        'https://res.cloudinary.com/dog2morgs/video/upload/v1778832002/J-119_vpl6ok.mp4#t=1.4',
         '/img/CP/dqiang/AC/J-119/1300-J-119-01.jpg',
         '/img/CP/dqiang/AC/J-119/1300-J-119-02.jpg',
         '/img/CP/dqiang/AC/J-119/1300-J-119-03.jpg',
@@ -412,6 +418,7 @@ export const nailGunsDetailData: Record<string, NailGunProduct> = {
     ],
     mainImages: [
       '/img/CP/dqiang/AC/J-123/1300-J-123-07.jpg',
+      'https://res.cloudinary.com/dog2morgs/video/upload/v1778838722/J-123_avlmbz.mp4#t=2',
       '/img/CP/dqiang/AC/J-123/1300-J-123-01.jpg',
       '/img/CP/dqiang/AC/J-123/1300-J-123-02.jpg',
       '/img/CP/dqiang/AC/J-123/1300-J-123-03.jpg',

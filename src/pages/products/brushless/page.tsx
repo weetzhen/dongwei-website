@@ -30,9 +30,9 @@ export default function BrushlessPage() {
       {/* Hero Banner */}
       <div className="relative w-full overflow-hidden aspect-[16/9] md:aspect-auto md:h-[800px]">
         <img
-          src="/img/flpage/qzuan.jpg"
+          src="/img/flpage/wshua.jpg"
           alt={t('brushless_hero_title')}
-          className="w-full h-full object-cover object-[center_30%]"
+          className="w-full h-full object-cover object-[center_52%]"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/0"></div>
       </div>

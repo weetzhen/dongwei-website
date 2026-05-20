@@ -3,34 +3,41 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import ContactSection from '@/components/feature/ContactSection';
 
+// 密钥校验：XOR 异或编码，源码中不出现明文口令
+// 校验逻辑：将输入字符 charCode 与 _K 异或，结果逐位比对 _C 数组
+const _C = [26, 26, 26, 26];
+const _K = 34;
+const _verifyCode = (s: string): boolean =>
+  s.length === _C.length && [...s].every((c, i) => (c.charCodeAt(0) ^ _K) === _C[i]);
+
 function useMaintenanceSwitch() {
   useEffect(() => {
-    let passwordBuffer = '';
+    let inputBuffer = '';
     let listening = false;
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
     const resetListener = () => {
       listening = false;
-      passwordBuffer = '';
+      inputBuffer = '';
       if (timeoutId) clearTimeout(timeoutId);
       timeoutId = null;
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Ctrl + Shift + M 触发密码监听
+      // Ctrl + Shift + M 触发隐藏监听
       if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'm') {
         e.preventDefault();
         listening = true;
-        passwordBuffer = '';
+        inputBuffer = '';
         if (timeoutId) clearTimeout(timeoutId);
         timeoutId = setTimeout(resetListener, 10000);
         return;
       }
       if (!listening) return;
       if (e.key >= '0' && e.key <= '9') {
-        passwordBuffer += e.key;
-        if (passwordBuffer.length >= 4) {
-          if (passwordBuffer === '8888') {
+        inputBuffer += e.key;
+        if (inputBuffer.length >= _C.length) {
+          if (_verifyCode(inputBuffer)) {
             const current = localStorage.getItem('i18n_maintenance_mode');
             const newMode = current === 'true' ? 'false' : 'true';
             localStorage.setItem('i18n_maintenance_mode', newMode);
@@ -97,28 +104,28 @@ export default function Home() {
       title: t('hero2_title'),
       description: t('hero2_desc'),
       cta: t('hero2_cta'),
-      image: '/img/page/qzhuan.jpg',
+      image: '/img/page/dqiang.jpg',
     },
     {
       subtitle: t('hero3_subtitle'),
       title: t('hero3_title'),
       description: t('hero3_desc'),
       cta: t('hero3_cta'),
-      image: '/img/page/qjfu.jpg',
+      image: '/img/page/mxue.jpg',
     },
     {
       subtitle: t('hero4_subtitle'),
       title: t('hero4_title'),
       description: t('hero4_desc'),
       cta: t('hero4_cta'),
-      image: '/img/page/dqiang1.jpg',
+      image: '/img/page/qjf.jpg',
     },
     {
       subtitle: t('hero5_subtitle'),
       title: t('hero5_title'),
       description: t('hero5_desc'),
       cta: t('hero5_cta'),
-      image: '/img/page/dqiang2.jpg',
+      image: '/img/page/jqiang.jpg',
     },
   ];
 
@@ -239,7 +246,7 @@ export default function Home() {
       path: '/products/workshop',
     },
     {
-      image: '/img/homefl/zs_md.jpg',
+      image: '/img/homefl/zs_md1.jpg',
       nameKey: 'cat_sharpening',
       path: '/products/sharpening',
     },
@@ -455,18 +462,19 @@ export default function Home() {
             <h2 className="text-2xl md:text-4xl font-black mb-3 md:mb-4">{t('prod_title')}</h2>
             <p className="text-base md:text-xl text-gray-600">{t('prod_subtitle')}</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-10 md:mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mb-10 md:mb-16">
             {[
               { numKey: 'stat1_num', labelKey: 'stat1_label', icon: 'ri-tools-fill' },
               { numKey: 'stat2_num', labelKey: 'stat2_label', icon: 'ri-building-4-fill' },
-              { numKey: 'stat3_num', labelKey: 'stat3_label', icon: 'ri-building-fill' },
-              { numKey: 'stat4_num', labelKey: 'stat4_label', icon: 'ri-team-fill' },
+              { numKey: 'stat3_num', labelKey: 'stat3_label', icon: 'ri-global-fill' },
+              { numKey: 'stat4_num', labelKey: 'stat4_label', icon: 'ri-store-3-fill' },
+              { numKey: 'stat5_num', labelKey: 'stat5_label', icon: 'ri-team-fill' },
             ].map((stat, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-5 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full mx-auto mb-4 md:mb-6" style={{ backgroundColor: '#eef3fa', color: '#144c90' }}>
                   <i className={`${stat.icon} text-2xl md:text-3xl`}></i>
                 </div>
-                <div className="text-3xl md:text-5xl font-black mb-2 md:mb-3" style={{ color: '#f6444e' }}>{t(stat.numKey)}</div>
+                <div className="text-2xl md:text-4xl font-black mb-2 md:mb-3 whitespace-nowrap" style={{ color: '#f6444e' }}>{t(stat.numKey)}</div>
                 <div className="text-gray-600 font-semibold text-sm md:text-lg">{t(stat.labelKey)}</div>
               </div>
             ))}
@@ -519,10 +527,10 @@ export default function Home() {
               <div className="hidden md:block absolute top-10 left-0 right-0 h-0.5" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), rgba(255,255,255,0.2), rgba(255,255,255,0.2), transparent)' }}></div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 {[
-                  { yearKey: 'mile1_year', titleKey: 'mile1_title', descKey: 'mile1_desc', icon: 'ri-flag-fill' },
-                  { yearKey: 'mile2_year', titleKey: 'mile2_title', descKey: 'mile2_desc', icon: 'ri-global-fill' },
-                  { yearKey: 'mile3_year', titleKey: 'mile3_title', descKey: 'mile3_desc', icon: 'ri-lightbulb-fill' },
-                  { yearKey: 'mile4_year', titleKey: 'mile4_title', descKey: 'mile4_desc', icon: 'ri-trophy-fill' },
+                  { yearKey: 'mile1_year', titleKey: 'mile1_title', descKey: '', icon: 'ri-flag-fill' },
+                  { yearKey: 'mile2_year', titleKey: 'mile2_title', descKey: '', icon: 'ri-global-fill' },
+                  { yearKey: 'mile3_year', titleKey: 'mile3_title', descKey: '', icon: 'ri-lightbulb-fill' },
+                  { yearKey: 'mile4_year', titleKey: 'mile4_title', descKey: '', icon: 'ri-trophy-fill' },
                 ].map((milestone, index) => (
                   <div key={index} className="flex flex-col items-center text-center group">
                     <div className="relative z-10 w-14 h-14 md:w-20 md:h-20 flex items-center justify-center rounded-full mb-4 md:mb-6 transition-transform duration-300 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #f6444e, #d63040)', boxShadow: '0 8px 24px rgba(246,68,78,0.4)' }}>
@@ -547,7 +555,7 @@ export default function Home() {
                 <h3 className="text-xl md:text-2xl font-black text-white">{t('cert_title')}</h3>
               </div>
               <div className="grid grid-cols-1 gap-2 md:gap-3">
-                {['cert1', 'cert2', 'cert3', 'cert4', 'cert5', 'cert6', 'cert7', 'cert8'].map((certKey, i) => (
+                {['cert1', 'cert2', 'cert3', 'cert4', 'cert5', 'cert6', 'cert7', 'cert8','cert9'].map((certKey, i) => (
                   <div key={i} className="flex items-center gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl transition-all duration-200 hover:bg-white/10" style={{ background: 'rgba(255,255,255,0.04)' }}>
                     <div className="w-6 h-6 flex items-center justify-center rounded-full flex-shrink-0" style={{ backgroundColor: 'rgba(246,68,78,0.2)', border: '1px solid rgba(246,68,78,0.5)' }}>
                       <i className="ri-check-line text-xs" style={{ color: '#f6444e' }}></i>
@@ -568,8 +576,8 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
                 <div className="grid grid-cols-2 gap-3 md:gap-4">
                   {[
-                    { num: '500+', label: t('stat1_label') },
-                    { num: '50+', label: t('deep_stat3_label') },
+                    { num: '300+', label: t('stat1_label') },
+                    { num: '100+', label: t('deep_stat3_label') },
                   ].map((s, i) => (
                     <div key={i} className="text-center rounded-xl py-3 md:py-4 px-3" style={{ background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(8px)' }}>
                       <div className="text-2xl md:text-3xl font-black" style={{ color: '#f6444e' }}>{s.num}</div>
