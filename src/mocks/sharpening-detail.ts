@@ -14,7 +14,6 @@ export const sharpeningDetailData: Record<string, { mainImages: string[]; featur
     mainImages: [
       '/img/CP/mxue/mxtai/S1B-DW01-220W/1300-S1B-DW01-220W-01.jpg',
       '/img/CP/mxue/mxtai/S1B-DW01-220W/1300-S1B-DW01-220W-02.jpg',
-      'https://www.w3schools.com/html/movie.mp4',
       '/img/CP/mxue/mxtai/S1B-DW01-220W/1300-S1B-DW01-220W-03.jpg',
       '/img/CP/mxue/mxtai/S1B-DW01-220W/1300-S1B-DW01-220W-04.jpg',
       '/img/CP/mxue/mxtai/S1B-DW01-220W/1300-S1B-DW01-220W-05.jpg',

@@ -139,11 +139,6 @@ export default function Navbar() {
     closeMenu(300);
   };
 
-  const handleNavMouseLeave = () => {
-    if (lockRef.current) return;
-    closeMenu(300);
-  };
-
   const handleDropdownEnter = () => {
     if (lockRef.current) return;
     if (timerRef.current) clearTimeout(timerRef.current);
@@ -207,6 +202,15 @@ export default function Navbar() {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const handleProductCenterLinkClick = (e: React.MouseEvent) => {
+    // 已经在当前页就滚动到顶部，但绝不关闭 hover 展开的菜单
+    if (location.pathname === '/products/all') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // 其余情况正常跳转，菜单状态由 hover 控制，不强制关闭
   };
 
   const handleLanguageChange = (language: Language) => {
@@ -300,9 +304,6 @@ export default function Navbar() {
             ? 'bg-white/70 backdrop-blur-md shadow-lg border-b border-white/30'
             : 'bg-white/70 backdrop-blur-md shadow-sm border-b border-white/20'
         }`}
-        onMouseLeave={() => {
-          handleNavMouseLeave();
-        }}
       >
         <div className="w-full px-4 md:px-8">
           <div className="flex items-center h-14 md:h-16 gap-4 md:gap-10">
@@ -327,13 +328,16 @@ export default function Navbar() {
                     }
                   }}
                   className="relative"
-                  onMouseEnter={() => item.type === 'megaMenu' ? enterMenu(item.title) : undefined}
                 >
                   {item.type === 'megaMenu' ? (
-                    <div className="flex items-center">
+                    <div
+                      className="flex items-center"
+                      onMouseEnter={() => enterMenu(item.title)}
+                      onMouseLeave={leaveMenu}
+                    >
                       <Link
                         to="/products/all"
-                        onClick={handleLinkClick('/products/all')}
+                        onClick={handleProductCenterLinkClick}
                         className="px-4 py-1.5 font-semibold text-base transition-colors duration-200 whitespace-nowrap cursor-pointer"
                         style={{ color: activeTitle === item.title ? '#144c90' : '#1f2937' }}
                       >
@@ -341,6 +345,9 @@ export default function Navbar() {
                       </Link>
                       <button
                         onClick={() => {
+                          if (activeTitle === item.title && menuState === 'open') {
+                            return;
+                          }
                           if (activeTitle === item.title) {
                             lockRef.current = false;
                             closeMenu();

@@ -14,7 +14,6 @@ export const brushlessDetailData: Record<string, { mainImages: string[]; feature
     mainImages: [
       '/img/CP/wshua/lsd/P0L-DW01-4V/1300-P0L-DW01-4V-01.jpg',
       '/img/CP/wshua/lsd/P0L-DW01-4V/1300-P0L-DW01-4V-02.jpg',
-      'https://www.w3schools.com/html/movie.mp4',
       '/img/CP/wshua/lsd/P0L-DW01-4V/1300-P0L-DW01-4V-03.jpg',
       '/img/CP/wshua/lsd/P0L-DW01-4V/1300-P0L-DW01-4V-04.jpg',
       '/img/CP/wshua/lsd/P0L-DW01-4V/1300-P0L-DW01-4V-05.jpg',
